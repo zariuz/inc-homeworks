@@ -1,3 +1,23 @@
-.someClass {
-
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  width: 500px;
+  min-height: 250px;
+  background-color: lightseagreen;
+  box-sizing: border-box;
+}
+.affairs {
+  margin-bottom: 10px;
+}
+.affairItem {
+  display: flex;
+  margin-bottom: 10px;
+}
+.affairEl {
+  width: 150px;
+}
+button {
+  margin-right: 10px;
 }
