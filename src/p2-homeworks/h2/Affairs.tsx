@@ -1,11 +1,11 @@
 import React from 'react';
 import Affair from './Affair';
-import { AffairPriorityType, AffairType, defaultAffairs } from './HW2';
+import {AffairType, FilterType} from './HW2';
 import style from './Affairs.module.css';
 
 type AffairsPropsType = {
-  data: typeof defaultAffairs;
-  setFilter: (filter: AffairPriorityType | 'all') => void;
+  data: Array<AffairType>;
+  setFilter: (filter: FilterType) => void;
   deleteAffairCallback: (_id: number) => void;
 };
 
@@ -31,10 +31,18 @@ function Affairs(props: AffairsPropsType) {
     <div className={style.wrapper}>
       <div className={style.affairs}>{mappedAffairs}</div>
       <div className={style.buttonBlock}>
-        <button onClick={setAll}>All</button>
-        <button onClick={setHigh}>High</button>
-        <button onClick={setMiddle}>Middle</button>
-        <button onClick={setLow}>Low</button>
+        <button className={style.btn} onClick={setAll}>
+          All
+        </button>
+        <button className={style.btn} onClick={setHigh}>
+          High
+        </button>
+        <button className={style.btn} onClick={setMiddle}>
+          Middle
+        </button>
+        <button className={style.btn} onClick={setLow}>
+          Low
+        </button>
       </div>
     </div>
   );

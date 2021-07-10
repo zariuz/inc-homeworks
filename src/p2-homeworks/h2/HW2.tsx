@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Affairs from './Affairs';
 
 // types
@@ -6,42 +6,43 @@ export type AffairPriorityType = 'low' | 'middle' | 'high';
 export type AffairType = {
   _id: number;
   name: string;
-  priority: string;
+  priority: AffairPriorityType;
 };
 export type FilterType = 'all' | AffairPriorityType;
 
 // constants
 export const defaultAffairs: Array<AffairType> = [
-  { _id: 1, name: 'React', priority: 'high' },
-  { _id: 2, name: 'anime', priority: 'low' },
-  { _id: 3, name: 'games', priority: 'low' },
-  { _id: 4, name: 'work', priority: 'high' },
-  { _id: 5, name: 'html & css', priority: 'middle' },
+  {_id: 1, name: 'React', priority: 'high'},
+  {_id: 2, name: 'anime', priority: 'low'},
+  {_id: 3, name: 'games', priority: 'low'},
+  {_id: 4, name: 'work', priority: 'high'},
+  {_id: 5, name: 'html & css', priority: 'middle'},
 ];
 
 // pure helper functions
 export const filterAffairs = (
-  affairs: typeof defaultAffairs,
+  affairs: Array<AffairType>,
   filter: FilterType,
-): any => {
+): Array<AffairType> => {
   if (filter === 'all') return affairs;
-  if (filter === 'low') {
+  else if (filter === 'low') {
     return affairs.filter((obj) => obj.priority === 'low');
-  }
-  if (filter === 'middle') {
+  } else if (filter === 'middle') {
     return affairs.filter((obj) => obj.priority === 'middle');
-  }
-  if (filter === 'high') {
+  } else if (filter === 'high') {
     return affairs.filter((obj) => obj.priority === 'high');
-  }
+  } else return affairs;
 };
-export const deleteAffair = (affairs: typeof defaultAffairs, _id: number): any => {
-  const delAffairs = affairs.filter((obj) => obj._id !== _id);
-  return delAffairs;
+
+export const deleteAffair = (
+  affairs: Array<AffairType>,
+  _id: number,
+): Array<AffairType> => {
+  return affairs.filter((obj) => obj._id !== _id);
 };
 
 function HW2() {
-  const [affairs, setAffairs] = useState<typeof defaultAffairs>(defaultAffairs);
+  const [affairs, setAffairs] = useState<Array<AffairType>>(defaultAffairs);
   const [filter, setFilter] = useState<FilterType>('all');
 
   const filteredAffairs = filterAffairs(affairs, filter);
