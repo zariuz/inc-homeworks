@@ -19,21 +19,17 @@ const Greeting: React.FC<GreetingPropsType> = ({
   error,
   totalUsers,
 }) => {
-  const inputClass = error ? s.error : '';
-
   return (
     <div className={s.wrapper}>
       <input
         value={name}
         onChange={setNameCallback}
         onKeyPress={onKeyEnterHandler}
-        className={inputClass}
+        className={error ? s.error : ''}
       />
-      <button onClick={addUser} disabled={name.length < 2}>
-        add
-      </button>
+      <button onClick={addUser}>add</button>
       <span className={s.total}>{totalUsers}</span>
-      <div>{error && 'Введите корректное имя!'}</div>
+      {error && <div className={s.errorMessage}>Введите корректное имя!</div>}
     </div>
   );
 };

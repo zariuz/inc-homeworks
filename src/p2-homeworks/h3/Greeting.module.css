@@ -2,10 +2,15 @@
   padding: 20px;
 }
 
-.error {
-  border: 1px solid red;
-}
-
 .total {
   margin-left: 10px;
+}
+
+.error {
+  border: 2px solid red;
+  outline: transparent;
+}
+
+.errorMessage {
+  color: red;
 }
