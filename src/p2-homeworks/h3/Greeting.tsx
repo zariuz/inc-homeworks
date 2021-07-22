@@ -6,6 +6,7 @@ type GreetingPropsType = {
   setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void;
   onKeyEnterHandler: (e: KeyboardEvent<HTMLInputElement>) => void;
   addUser: () => void;
+  setOnBlur: () => void;
   error: boolean;
   totalUsers: number;
 };
@@ -18,14 +19,16 @@ const Greeting: React.FC<GreetingPropsType> = ({
   onKeyEnterHandler,
   error,
   totalUsers,
+  setOnBlur,
 }) => {
   return (
     <div className={s.wrapper}>
       <input
         value={name}
+        className={error ? s.error : ''}
         onChange={setNameCallback}
         onKeyPress={onKeyEnterHandler}
-        className={error ? s.error : ''}
+        onBlur={setOnBlur}
       />
       <button onClick={addUser}>add</button>
       <span className={s.total}>{totalUsers}</span>

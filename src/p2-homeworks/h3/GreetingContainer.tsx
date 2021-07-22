@@ -23,6 +23,9 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
       addUser();
     }
   };
+  const setOnBlur = () => {
+    !name && setError(true);
+  };
   const addUser = () => {
     if (name.trim()) {
       addUserCallback(name);
@@ -42,6 +45,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
       onKeyEnterHandler={onKeyEnterHandler}
       error={error}
       totalUsers={totalUsers}
+      setOnBlur={setOnBlur}
     />
   );
 };
