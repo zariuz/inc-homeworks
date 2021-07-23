@@ -34,6 +34,7 @@
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
 }
+
 .btnMenu span {
   display: block;
   height: 3px;
@@ -42,6 +43,7 @@
   transition: all 0.1s linear 0.23s;
   position: relative;
 }
+
 .btnMenu span.first {
   margin-top: 0;
 }
@@ -49,16 +51,20 @@
 .hiddenMenuTicker:checked ~ .btnMenu {
   left: 160px;
 }
+
 .hiddenMenuTicker:checked ~ .hiddenMenu {
   left: 0;
 }
+
 .hiddenMenuTicker:checked ~ .btnMenu span.first {
   -webkit-transform: rotate(45deg);
   top: 8px;
 }
+
 .hiddenMenuTicker:checked ~ .btnMenu span.second {
   opacity: 0;
 }
+
 .hiddenMenuTicker:checked ~ .btnMenu span.third {
   -webkit-transform: rotate(-45deg);
   top: -8px;
@@ -79,4 +85,5 @@
 
 .selected {
   color: orangered;
+
 }

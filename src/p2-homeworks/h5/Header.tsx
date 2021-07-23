@@ -6,11 +6,11 @@ import s from './Header.module.css';
 function Header() {
   return (
     <nav>
-      <input type="checkbox" id="hmt" className={s.hiddenMenuTicker}></input>
+      <input type="checkbox" id="hmt" className={s.hiddenMenuTicker}/>
       <label className={s.btnMenu} htmlFor="hmt">
-        <span className={s.first}></span>
-        <span className={s.second}></span>
-        <span className={s.third}></span>
+        <span className={s.first}/>
+        <span className={s.second}/>
+        <span className={s.third}/>
       </label>
       <ul className={s.hiddenMenu}>
         <li className={s.menuItem}>
