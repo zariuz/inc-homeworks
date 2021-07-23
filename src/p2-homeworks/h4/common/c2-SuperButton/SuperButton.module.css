@@ -48,15 +48,15 @@
 }
 
 .button:focus {
-  outline: 1px solid #99ff99;
+  outline: 1px solid lightskyblue;
 }
 
 .button:active {
-  background: #99ff99;
+  background: blue;
 }
 
 .button:disabled {
-  background: #005500;
+  background: blue;
   cursor: auto;
 }
 
@@ -69,8 +69,8 @@
 }
 
 .default {
-  background: #003300;
-  color: #99ff99;
+  background: darkblue;
+  color: lightskyblue;
   outline: none;
 }
 

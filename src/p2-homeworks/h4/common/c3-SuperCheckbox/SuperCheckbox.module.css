@@ -14,12 +14,9 @@
 
 .checkbox:checked {
   appearance: none;
-  background-color: #335533;
+  background-color: blue;
 }
 
 .checkbox:focus {
-  outline: 1px solid #99ff99;
-}
-
-.spanClassName {
+  outline: 1px solid lightskyblue;
 }
