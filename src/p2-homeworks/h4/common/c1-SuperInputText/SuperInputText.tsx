@@ -1,6 +1,6 @@
 import React, {
   ChangeEvent,
-  DetailedHTMLProps,
+  DetailedHTMLProps, FocusEvent,
   InputHTMLAttributes,
   KeyboardEvent,
 } from 'react';
@@ -23,6 +23,7 @@ type SuperInputTextPropsType = DefaultInputPropsType & {
 const SuperInputText: React.FC<SuperInputTextPropsType> = ({
   type, // достаём и игнорируем чтоб нельзя было задать другой тип инпута
   onChange,
+  onBlur,
   onChangeText,
   onKeyPress,
   onEnter,
@@ -45,6 +46,10 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = ({
     onEnter(); // то вызвать его
   };
 
+  const onBlurCallback =(e:FocusEvent<HTMLInputElement>)=>{
+    onBlur && onBlur(e)
+  }
+
   const finalSpanClassName = `${s.error} ${spanClassName ? spanClassName : ''}`;
   const finalInputClassName = `${s.input} ${
     error ? s.errorInput : s.superInput
@@ -54,6 +59,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = ({
     <>
       <input
         type={'text'}
+        onBlur={onBlurCallback}
         onChange={onChangeCallback}
         onKeyPress={onKeyPressCallback}
         className={finalInputClassName}

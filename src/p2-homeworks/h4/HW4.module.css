@@ -8,6 +8,11 @@
   align-items: center;
 }
 
+.button {
+  margin: 5px;
+
+}
+
 .inputWrraper {
   display: flex;
   flex-direction: column;

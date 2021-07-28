@@ -22,7 +22,7 @@ function HW4() {
 
   return (
     <div>
-      <hr />
+      <hr/>
       homeworks 4
       <div className={s.column}>
         <div className={s.inputWrraper}>
@@ -41,16 +41,21 @@ function HW4() {
         </div>
         {/*----------------------------------------------------*/}
 
-        <SuperButton>default</SuperButton>
+        <div className={s.button}>
+          <SuperButton>default</SuperButton>
+        </div>
 
-        <SuperButton
-          red // пропсу с булевым значением не обязательно указывать true
-          onClick={showAlert}>
-          Submit {/*// название кнопки попадёт в children*/}
-        </SuperButton>
+        <div className={s.button}>
+          <SuperButton
+            red // пропсу с булевым значением не обязательно указывать true
+            onClick={showAlert}>
+            Submit {/*// название кнопки попадёт в children*/}
+          </SuperButton>
+        </div>
 
-        <SuperButton disabled>disabled</SuperButton>
-
+        <div className={s.button}>
+          <SuperButton disabled>disabled</SuperButton>
+        </div>
         {/*----------------------------------------------------*/}
 
         <SuperCheckbox checked={checked} onChangeChecked={setChecked}>
@@ -58,14 +63,14 @@ function HW4() {
         </SuperCheckbox>
 
         {/*// onChange тоже должен работать*/}
-        <SuperCheckbox checked={checked} onChange={testOnChange} />
+        <SuperCheckbox checked={checked} onChange={testOnChange}/>
       </div>
-      <hr />
+      <hr/>
       {/*для личного творчества, могу проверить*/}
       {/*<AlternativeSuperInputText/>*/}
       {/*<AlternativeSuperButton/>*/}
       {/*<AlternativeSuperCheckbox/>*/}
-      <hr />
+      <hr/>
     </div>
   );
 }
