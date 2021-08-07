@@ -26,15 +26,18 @@ const Greeting: React.FC<GreetingPropsType> = ({
   return (
     <div className={s.wrapper}>
       <div className={s.input}>
-        <SuperInputText value={name}
-                        error={error}
-                        onChange={setNameCallback}
-                        onKeyPress={onKeyEnterHandler}
-                        onBlur={setOnBlur}
+        <SuperInputText
+          value={name}
+          error={error}
+          onChange={setNameCallback}
+          onKeyPress={onKeyEnterHandler}
+          onBlur={setOnBlur}
         />
       </div>
       <div className={s.button}>
-        <SuperButton onClick={addUser} disabled={!name}>add</SuperButton>
+        <SuperButton onClick={addUser} disabled={!name}>
+          add
+        </SuperButton>
         <span className={s.total}>{totalUsers}</span>
       </div>
     </div>

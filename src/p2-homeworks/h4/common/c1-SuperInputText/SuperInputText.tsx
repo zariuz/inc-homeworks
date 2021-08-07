@@ -1,14 +1,17 @@
 import React, {
   ChangeEvent,
-  DetailedHTMLProps, FocusEvent,
+  DetailedHTMLProps,
+  FocusEvent,
   InputHTMLAttributes,
   KeyboardEvent,
 } from 'react';
 import s from './SuperInputText.module.css';
 
 // тип пропсов обычного инпута
-type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement>;
+type DefaultInputPropsType = DetailedHTMLProps<
+  InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+>;
 
 // здесь мы говорим что у нашего инпута будут такие же пропсы как у обычного инпута
 // (чтоб не писать value: string, onChange: ...; они уже все описаны в DefaultInputPropsType)
@@ -34,7 +37,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = ({
 }) => {
   const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
     onChange && // если есть пропс onChange
-    onChange(e); // то передать ему е (поскольку onChange не обязателен)
+      onChange(e); // то передать ему е (поскольку onChange не обязателен)
 
     onChangeText && onChangeText(e.currentTarget.value);
   };
@@ -42,18 +45,18 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = ({
     onKeyPress && onKeyPress(e);
 
     onEnter && // если есть пропс onEnter
-    e.key === 'Enter' && // и если нажата кнопка Enter
-    onEnter(); // то вызвать его
+      e.key === 'Enter' && // и если нажата кнопка Enter
+      onEnter(); // то вызвать его
   };
 
-  const onBlurCallback =(e:FocusEvent<HTMLInputElement>)=>{
-    onBlur && onBlur(e)
-  }
+  const onBlurCallback = (e: FocusEvent<HTMLInputElement>) => {
+    onBlur && onBlur(e);
+  };
 
   const finalSpanClassName = `${s.error} ${spanClassName ? spanClassName : ''}`;
   const finalInputClassName = `${s.input} ${
     error ? s.errorInput : s.superInput
-  } ${className}`; // need to fix with (?:) and s.superInput
+  } ${className}`;
 
   return (
     <>
