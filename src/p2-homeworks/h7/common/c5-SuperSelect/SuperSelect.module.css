@@ -1,0 +1,23 @@
+.select {
+  width: 100px;
+  padding: 5px 30px 5px 5px;
+  cursor: pointer;
+  background-color: darkblue;
+  border: 2px inset rgb(118, 118, 118);
+  color: lightskyblue;
+}
+
+.select:focus {
+  outline: none;
+  border: 2px solid lightskyblue;
+}
+
+.option {
+  color: darkblue;
+  background: lightskyblue;
+}
+
+.option:checked {
+  background: darkblue;
+  color: lightskyblue;
+}
