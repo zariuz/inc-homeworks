@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 85px;
+}
+
+.time {
+  margin-left: 5px;
+  padding-top: 5px;
+  height: 60px;
+}
+
+.button {
+  margin: 5px;
+}
