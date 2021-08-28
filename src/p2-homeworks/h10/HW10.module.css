@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  height: 100px;
+}
+
+.button {
+  margin: 5px;
+}
